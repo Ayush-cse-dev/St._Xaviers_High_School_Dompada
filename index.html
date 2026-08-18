@@ -1,884 +1,670 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>St. Xavier's High School | Class Routine</title>
-
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>St. Xavier's High School | Class Routine</title>
+  <!-- Google Font & Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
     * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Segoe UI", Arial, sans-serif;
-    }
-
-    :root {
-        --primary: #1e3a8a;
-        --secondary: #2563eb;
-        --accent: #f59e0b;
-        --light: #f1f5f9;
-        --dark: #0f172a;
-        --white: #ffffff;
-        --border: #dbe3ef;
-        --success: #15803d;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-        background: #f4f7fb;
-        color: var(--dark);
+      font-family: 'Space Grotesk', sans-serif;
+      background: #faf7f2;
+      color: #1a1a2e;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* HEADER */
+    /* -------- dark glam header -------- */
     header {
-        background: linear-gradient(135deg, #172554, #2563eb);
-        color: white;
-        padding: 25px 6%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px;
-        box-shadow: 0 5px 20px rgba(0,0,0,.15);
+      background: #0f0e1a;
+      background-image: radial-gradient(circle at 10% 30%, #2b1f4a 0%, #0f0e1a 80%);
+      padding: 24px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      border-bottom: 2px solid #f5c542;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+      position: relative;
     }
-
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #f5c542, #f5a623, #f5c542);
+      opacity: 0.3;
+    }
     .school-info h1 {
-        font-size: 28px;
-        margin-bottom: 5px;
+      font-size: 2.1rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #fff;
+      text-shadow: 0 0 20px rgba(245, 197, 66, 0.2);
     }
-
+    .school-info h1 i {
+      color: #f5c542;
+      margin-right: 12px;
+    }
     .school-info p {
-        opacity: .9;
-        font-size: 14px;
+      color: #b7b0c9;
+      font-weight: 400;
+      font-size: 0.95rem;
+      margin-top: 4px;
+      letter-spacing: 0.3px;
     }
-
+    .school-info p i {
+      color: #f5c542;
+      margin-right: 6px;
+    }
     .school-logo {
-    width: 75px;
-    height: 75px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-}
+      width: 80px;
+      height: 80px;
+      background: #1e1b2e;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 2px solid #f5c542;
+      box-shadow: 0 0 30px rgba(245, 197, 66, 0.15);
+      transition: 0.3s;
+    }
+    .school-logo:hover {
+      transform: rotate(4deg) scale(1.04);
+      border-color: #ffd966;
+    }
+    .school-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 30px;
+    }
 
-.school-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 50%;
-}
-
-    /* NAVIGATION */
+    /* -------- navigation: minimal pill -------- */
     nav {
-        background: white;
-        padding: 12px 6%;
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        box-shadow: 0 2px 10px rgba(0,0,0,.07);
+      background: #1e1b2e;
+      padding: 12px 6%;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #2d2a40;
+      backdrop-filter: blur(6px);
+      position: sticky;
+      top: 0;
+      z-index: 20;
     }
-
     nav button {
-        border: none;
-        background: #e8eefc;
-        color: var(--primary);
-        padding: 11px 18px;
-        border-radius: 9px;
-        cursor: pointer;
-        font-weight: 600;
-        transition: .25s;
+      border: none;
+      background: transparent;
+      color: #b7b0c9;
+      padding: 10px 24px;
+      border-radius: 60px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: 0.5px;
+      font-family: 'Space Grotesk', sans-serif;
     }
-
-    nav button:hover,
+    nav button i {
+      font-size: 1.1rem;
+    }
+    nav button:hover {
+      background: #2d2a40;
+      color: #f5c542;
+      transform: translateY(-2px);
+    }
     nav button.active {
-        background: var(--primary);
-        color: white;
+      background: #f5c542;
+      color: #0f0e1a;
+      box-shadow: 0 8px 24px -4px #f5c54260;
     }
 
-    /* MAIN */
+    /* -------- main container -------- */
     main {
-        width: 92%;
-        max-width: 1400px;
-        margin: 30px auto;
+      width: 94%;
+      max-width: 1440px;
+      margin: 32px auto;
+      flex: 1;
     }
 
+    /* hero – bold & minimal */
     .hero {
-        background: white;
-        padding: 25px;
-        border-radius: 18px;
-        margin-bottom: 25px;
-        box-shadow: 0 5px 20px rgba(15,23,42,.06);
+      background: #ffffff;
+      padding: 30px 34px;
+      border-radius: 32px;
+      margin-bottom: 32px;
+      box-shadow: 0 20px 50px -12px rgba(15, 14, 26, 0.08);
+      border: 1px solid #e9e3f0;
+      position: relative;
     }
-
+    .hero::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 6px;
+      background: linear-gradient(180deg, #f5c542, #f5a623);
+      border-radius: 32px 0 0 32px;
+    }
     .hero h2 {
-        color: var(--primary);
-        margin-bottom: 8px;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
-
+    .hero h2 i {
+      color: #f5c542;
+      font-size: 2rem;
+    }
     .hero p {
-        color: #64748b;
+      color: #4a4560;
+      margin-top: 8px;
+      font-size: 1rem;
+      max-width: 800px;
+      font-weight: 400;
+    }
+    .hero p span {
+      background: #f5c54220;
+      padding: 2px 16px;
+      border-radius: 40px;
+      font-weight: 500;
+      border: 1px solid #f5c54240;
     }
 
-    /* CONTROLS */
-    .controls {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin-bottom: 20px;
-    }
-
-    select,
-    input {
-        padding: 12px 15px;
-        border: 1px solid var(--border);
-        border-radius: 9px;
-        background: white;
-        outline: none;
-        min-width: 190px;
-    }
-
-    input:focus,
-    select:focus {
-        border-color: var(--secondary);
-    }
-
-    .print-btn {
-        background: var(--primary);
-        color: white;
-        border: none;
-        border-radius: 9px;
-        padding: 12px 20px;
-        cursor: pointer;
-        font-weight: bold;
-    }
-
-    .print-btn:hover {
-        background: #172554;
-    }
-
-    /* TIMETABLE */
-    .table-container {
-        overflow-x: auto;
-        background: white;
-        border-radius: 15px;
-        box-shadow: 0 5px 20px rgba(15,23,42,.07);
-    }
-
-    table {
-        width: 100%;
-        min-width: 900px;
-        border-collapse: collapse;
-    }
-
-    th {
-        background: var(--primary);
-        color: white;
-        padding: 15px 10px;
-        text-align: center;
-        font-size: 14px;
-    }
-
-    td {
-        border: 1px solid var(--border);
-        padding: 13px 8px;
-        text-align: center;
-        font-size: 13px;
-        font-weight: 600;
-        min-width: 135px;
-    }
-
-    tr:nth-child(even) td {
-        background: #f8fafc;
-    }
-
-    .period {
-        background: #e8eefc !important;
-        color: var(--primary);
-        font-weight: 800;
-    }
-
-    .subject {
-        display: inline-block;
-        padding: 7px 10px;
-        border-radius: 7px;
-        font-size: 12px;
-    }
-
-    .english {
-        background: #dbeafe;
-        color: #1d4ed8;
-    }
-
-    .hindi {
-        background: #fef3c7;
-        color: #92400e;
-    }
-
-    .odia {
-        background: #dcfce7;
-        color: #166534;
-    }
-
-    .maths {
-        background: #fce7f3;
-        color: #9d174d;
-    }
-
-    .evs {
-        background: #ede9fe;
-        color: #6d28d9;
-    }
-
-    .art {
-        background: #ffedd5;
-        color: #c2410c;
-    }
-
-    .break {
-        background: #fef3c7 !important;
-        color: #92400e;
-        font-weight: bold;
-        text-align: center;
-    }
-
-    /* INFO CARDS */
+    /* cards – clean & elevated */
     .cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 15px;
-        margin-bottom: 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      margin-bottom: 32px;
     }
-
     .card {
-        background: white;
-        padding: 20px;
-        border-radius: 14px;
-        box-shadow: 0 4px 15px rgba(0,0,0,.06);
+      background: #ffffff;
+      padding: 22px 16px;
+      border-radius: 28px;
+      box-shadow: 0 6px 24px rgba(15, 14, 26, 0.04);
+      text-align: center;
+      transition: 0.25s;
+      border: 1px solid #ede8f5;
     }
-
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: #f5c542;
+      box-shadow: 0 20px 40px -12px rgba(245, 197, 66, 0.15);
+    }
+    .card i {
+      font-size: 2.2rem;
+      color: #1a1a2e;
+      background: #f5f0fa;
+      padding: 14px;
+      border-radius: 60px;
+      margin-bottom: 12px;
+      transition: 0.2s;
+    }
+    .card:hover i {
+      background: #f5c542;
+      color: #0f0e1a;
+    }
     .card h3 {
-        color: var(--primary);
-        margin-bottom: 6px;
+      color: #1a1a2e;
+      font-size: 1.05rem;
+      font-weight: 700;
     }
-
     .card p {
-        color: #64748b;
-        font-size: 13px;
+      color: #5a5570;
+      font-size: 0.85rem;
+      margin-top: 4px;
+      font-weight: 500;
     }
 
-    /* FOOTER */
+    /* controls – dark & subtle */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 24px;
+      align-items: center;
+      background: #ffffff;
+      padding: 14px 24px;
+      border-radius: 60px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+      border: 1px solid #ede8f5;
+    }
+    .controls select,
+    .controls input {
+      padding: 10px 20px;
+      border: 1px solid #e0d9eb;
+      border-radius: 60px;
+      background: #faf8fc;
+      outline: none;
+      font-weight: 500;
+      color: #1a1a2e;
+      min-width: 170px;
+      font-family: 'Space Grotesk', sans-serif;
+      transition: 0.2s;
+    }
+    .controls select:focus,
+    .controls input:focus {
+      border-color: #f5c542;
+      box-shadow: 0 0 0 4px #f5c54230;
+    }
+    .print-btn {
+      background: #0f0e1a;
+      color: white;
+      border: none;
+      border-radius: 60px;
+      padding: 10px 28px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.25s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Space Grotesk', sans-serif;
+      margin-left: auto;
+    }
+    .print-btn:hover {
+      background: #f5c542;
+      color: #0f0e1a;
+      transform: scale(1.02);
+      box-shadow: 0 8px 24px -4px #f5c54280;
+    }
+
+    /* table – bold & clean */
+    .table-container {
+      overflow-x: auto;
+      background: #ffffff;
+      border-radius: 32px;
+      box-shadow: 0 20px 50px -12px rgba(15, 14, 26, 0.06);
+      border: 1px solid #ede8f5;
+    }
+    table {
+      width: 100%;
+      min-width: 900px;
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+    th {
+      background: #0f0e1a;
+      color: white;
+      padding: 18px 14px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    th:first-child { border-radius: 32px 0 0 0; }
+    th:last-child { border-radius: 0 32px 0 0; }
+    td {
+      padding: 16px 12px;
+      border-bottom: 1px solid #f0ebf5;
+      text-align: center;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #1a1a2e;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #faf8fc; }
+    .period {
+      background: #f5f0fa !important;
+      font-weight: 700;
+      color: #0f0e1a;
+      border-radius: 16px 0 0 16px;
+    }
+    .subject {
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 60px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      background: #f0ebf5;
+      color: #1a1a2e;
+      transition: 0.15s;
+    }
+    .subject:hover { transform: scale(1.04); }
+    .english { background: #d4e0fc; color: #0f2b6b; }
+    .hindi { background: #fcefd4; color: #7a4f0a; }
+    .odia { background: #d4f0e0; color: #0d5a30; }
+    .maths { background: #faddf0; color: #871a4f; }
+    .evs { background: #e0d9fc; color: #3d1d8a; }
+    .art { background: #ffe2cc; color: #a33d0a; }
+    .free { background: #eef0f5; color: #5a5570; }
+
+    /* syllabus – bold & minimal */
+    .syllabus-placeholder {
+      background: #ffffff;
+      border-radius: 40px;
+      padding: 60px 30px;
+      text-align: center;
+      border: 2px dashed #d4cce0;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.02);
+      margin-top: 8px;
+    }
+    .syllabus-placeholder i {
+      font-size: 4.5rem;
+      color: #0f0e1a;
+      background: #f5f0fa;
+      padding: 24px;
+      border-radius: 80px;
+      margin-bottom: 20px;
+    }
+    .syllabus-placeholder h3 {
+      color: #1a1a2e;
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+    .syllabus-placeholder .msg-chip {
+      background: #0f0e1a;
+      color: #f5c542;
+      padding: 10px 32px;
+      border-radius: 60px;
+      display: inline-block;
+      font-weight: 600;
+      margin-top: 18px;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+    }
+    .syllabus-placeholder p {
+      color: #4a4560;
+      font-size: 1.2rem;
+      margin-top: 8px;
+    }
+
+    /* footer – dark & warm */
     footer {
-        margin-top: 50px;
-        background: #172554;
-        color: white;
-        text-align: center;
-        padding: 25px;
+      margin-top: 50px;
+      background: #0f0e1a;
+      color: #b7b0c9;
+      text-align: center;
+      padding: 32px 20px;
+      border-top: 2px solid #f5c542;
+    }
+    footer strong {
+      font-size: 1.3rem;
+      color: white;
+    }
+    footer strong i { color: #f5c542; margin-right: 8px; }
+    footer p { opacity: 0.6; margin-top: 6px; }
+    .developer {
+      margin-top: 14px;
+      color: #f5c542;
+      font-weight: 500;
+    }
+    .developer strong { color: white; }
+    .copyright {
+      margin-top: 8px;
+      font-size: 0.8rem;
+      opacity: 0.4;
     }
 
-    footer p {
-        opacity: .8;
-        font-size: 13px;
-        margin-top: 5px;
+    .hidden { display: none; }
+
+    /* mobile */
+    @media (max-width: 700px) {
+      header { padding: 16px; }
+      .school-info h1 { font-size: 1.5rem; }
+      .school-logo { width: 60px; height: 60px; border-radius: 20px; }
+      main { width: 96%; }
+      .controls { flex-direction: column; align-items: stretch; border-radius: 32px; padding: 18px; }
+      .controls select, .controls input { min-width: auto; }
+      .print-btn { margin-left: 0; justify-content: center; }
+      .hero h2 { font-size: 1.5rem; }
+      .cards { grid-template-columns: 1fr 1fr; }
     }
 
-    .hidden {
-        display: none;
-    }
-.developer {
-    margin-top: 12px;
-    font-size: 14px;
-    color: #fbbf24;
-    font-weight: 600;
-}
-
-.developer strong {
-    color: #ffffff;
-}
-
-.copyright {
-    margin-top: 8px;
-    font-size: 12px;
-    opacity: 0.7;
-}
-    /* MOBILE */
-    @media(max-width: 700px) {
-        header {
-            padding: 20px;
-        }
-
-        .school-info h1 {
-            font-size: 21px;
-        }
-
-        .school-logo {
-            width: 50px;
-            height: 50px;
-            font-size: 20px;
-        }
-
-        main {
-            width: 95%;
-        }
-
-        .controls {
-            flex-direction: column;
-        }
-
-        select,
-        input,
-        .print-btn {
-            width: 100%;
-        }
-    }
-
-    /* PRINT */
     @media print {
-        header,
-        nav,
-        .controls,
-        .hero,
-        .cards,
-        footer {
-            display: none !important;
-        }
-
-        main {
-            width: 100%;
-            margin: 0;
-        }
-
-        .table-container {
-            box-shadow: none;
-        }
-
-        table {
-            min-width: 0;
-        }
-
-        th {
-            background: #ddd !important;
-            color: black !important;
-        }
+      header, nav, .controls, .hero, .cards, footer { display: none !important; }
+      main { width: 100%; margin: 0; }
+      .table-container { border: none; box-shadow: none; border-radius: 0; }
+      th { background: #ccc !important; color: black !important; }
+      td { border-color: #ccc; }
     }
-</style>
+  </style>
 </head>
-
 <body>
 
 <header>
-    <div class="school-info">
-        <h1>St. Xavier's High School</h1>
-        <p>Classes I – V | Academic Class Routine</p>
-    </div>
-
-    <div class="school-logo">
-    <img src="unnamed.png" alt="St. Xavier's High School Logo">
-</div>
+  <div class="school-info">
+    <h1><i class="fas fa-graduation-cap"></i>St. Xavier's High School</h1>
+    <p><i class="fas fa-calendar-alt"></i> Classes I – V · Academic Routine</p>
+  </div>
+  <div class="school-logo">
+    <img src="unnamed.png" alt="St. Xavier's High School Logo" />
+  </div>
 </header>
 
 <nav>
-    <button class="nav-btn active" onclick="showSection('classes', this)">
-        📚 Class Routine
-    </button>
-
-    <button class="nav-btn" onclick="showSection('teachers', this)">
-        👨‍🏫 Teacher Routine
-    </button>
+  <button class="nav-btn active" onclick="showSection('classes', this)">
+    <i class="fas fa-table"></i> Class Routine
+  </button>
+  <button class="nav-btn" onclick="showSection('teachers', this)">
+    <i class="fas fa-chalkboard-teacher"></i> Teacher Routine
+  </button>
+  <button class="nav-btn" onclick="showSection('syllabus', this)">
+    <i class="fas fa-book-open"></i> Syllabus
+  </button>
 </nav>
 
 <main>
+  <section class="hero">
+    <h2 id="pageTitle"><i class="fas fa-clock"></i> Class-wise Routine</h2>
+    <p>
+      <i class="fas fa-check-circle" style="color: #f5c542;"></i>
+      Complete weekly timetable for Classes I – V. One teacher per subject — no clashes.
+      <span>English GK &amp; Art on Saturday</span>
+    </p>
+  </section>
 
-    <section class="hero">
-        <h2 id="pageTitle">Class-wise Routine</h2>
-        <p>
-            Complete weekly timetable for Classes I to V.
-            English GK and Art are scheduled on Saturday.
-        </p>
-    </section>
+  <!-- info cards -->
+  <div class="cards">
+    <div class="card"><i class="fas fa-school"></i><h3>Classes</h3><p>I to V</p></div>
+    <div class="card"><i class="fas fa-clock"></i><h3>School Time</h3><p>7:15 – 11:15 AM</p></div>
+    <div class="card"><i class="fas fa-utensils"></i><h3>Tiffin</h3><p>9:30 – 9:45 AM</p></div>
+    <div class="card"><i class="fas fa-paint-brush"></i><h3>Art</h3><p>Saturday</p></div>
+    <div class="card"><i class="fas fa-language"></i><h3>English GK</h3><p>Saturday</p></div>
+  </div>
 
-    <div class="cards">
-        <div class="card">
-            <h3>🏫 Classes</h3>
-            <p>Class I to Class V</p>
-        </div>
-
-        <div class="card">
-            <h3>⏰ School Time</h3>
-            <p>7:15 AM – 11:15 AM</p>
-        </div>
-
-        <div class="card">
-            <h3>🍱 Tiffin</h3>
-            <p>9:30 AM – 9:45 AM</p>
-        </div>
-
-        <div class="card">
-            <h3>🎨 Art</h3>
-            <p>Saturday Only</p>
-        </div>
-
-        <div class="card">
-            <h3>📖 English GK</h3>
-            <p>Saturday Only</p>
-        </div>
+  <!-- CLASS SECTION -->
+  <section id="classes">
+    <div class="controls">
+      <select id="classSelect" onchange="renderClassRoutine()">
+        <option value="1">Class I</option><option value="2">Class II</option>
+        <option value="3">Class III</option><option value="4">Class IV</option>
+        <option value="5">Class V</option>
+      </select>
+      <select id="daySelect" onchange="renderClassRoutine()">
+        <option value="all">Monday – Saturday</option>
+        <option value="Monday">Monday</option><option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option><option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option><option value="Saturday">Saturday</option>
+      </select>
+      <input type="text" id="searchClass" placeholder="🔎 Search subject..." oninput="renderClassRoutine()" />
+      <button class="print-btn" onclick="window.print()"><i class="fas fa-print"></i> Print</button>
     </div>
+    <div class="table-container">
+      <table id="classTable"></table>
+    </div>
+  </section>
 
-    <!-- CLASS SECTION -->
-    <section id="classes">
+  <!-- TEACHER SECTION -->
+  <section id="teachers" class="hidden">
+    <div class="controls">
+      <select id="teacherSelect" onchange="renderTeacherRoutine()">
+        <option value="English">English Teacher</option>
+        <option value="Hindi">Hindi Teacher</option>
+        <option value="Odia">Odia Teacher</option>
+        <option value="Maths">Maths Teacher</option>
+        <option value="EVS">EVS Teacher</option>
+      </select>
+      <select id="teacherDay" onchange="renderTeacherRoutine()">
+        <option value="all">Monday – Saturday</option>
+        <option value="Monday">Monday</option><option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option><option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option><option value="Saturday">Saturday</option>
+      </select>
+      <button class="print-btn" onclick="window.print()"><i class="fas fa-print"></i> Print</button>
+    </div>
+    <div class="table-container">
+      <table id="teacherTable"></table>
+    </div>
+  </section>
 
-        <div class="controls">
-
-            <select id="classSelect" onchange="renderClassRoutine()">
-                <option value="1">Class I</option>
-                <option value="2">Class II</option>
-                <option value="3">Class III</option>
-                <option value="4">Class IV</option>
-                <option value="5">Class V</option>
-            </select>
-
-            <select id="daySelect" onchange="renderClassRoutine()">
-                <option value="all">Monday – Saturday</option>
-                <option value="Monday">Monday</option>
-                <option value="Tuesday">Tuesday</option>
-                <option value="Wednesday">Wednesday</option>
-                <option value="Thursday">Thursday</option>
-                <option value="Friday">Friday</option>
-                <option value="Saturday">Saturday</option>
-            </select>
-
-            <input
-                type="text"
-                id="searchClass"
-                placeholder="🔎 Search subject..."
-                oninput="renderClassRoutine()"
-            >
-
-            <button class="print-btn" onclick="window.print()">
-                🖨 Print
-            </button>
-
-        </div>
-
-        <div class="table-container">
-            <table id="classTable"></table>
-        </div>
-
-    </section>
-
-
-    <!-- TEACHER SECTION -->
-    <section id="teachers" class="hidden">
-
-        <div class="controls">
-
-            <select id="teacherSelect" onchange="renderTeacherRoutine()">
-                <option value="English">English Teacher</option>
-                <option value="Hindi">Hindi Teacher</option>
-                <option value="Odia">Odia Teacher</option>
-                <option value="Maths">Maths Teacher</option>
-                <option value="EVS">EVS Teacher</option>
-            </select>
-
-            <select id="teacherDay" onchange="renderTeacherRoutine()">
-                <option value="all">Monday – Saturday</option>
-                <option value="Monday">Monday</option>
-                <option value="Tuesday">Tuesday</option>
-                <option value="Wednesday">Wednesday</option>
-                <option value="Thursday">Thursday</option>
-                <option value="Friday">Friday</option>
-                <option value="Saturday">Saturday</option>
-            </select>
-
-            <button class="print-btn" onclick="window.print()">
-                🖨 Print
-            </button>
-
-        </div>
-
-        <div class="table-container">
-            <table id="teacherTable"></table>
-        </div>
-
-    </section>
-
+  <!-- SYLLABUS SECTION -->
+  <section id="syllabus" class="hidden">
+    <div class="syllabus-placeholder">
+      <i class="fas fa-book"></i>
+      <h3>📘 Syllabus &amp; Curriculum</h3>
+      <p><i class="fas fa-pen-fancy" style="margin-right: 8px;"></i> Syllabus will be updated soon.</p>
+      <span class="msg-chip"><i class="fas fa-hourglass-half" style="margin-right: 10px;"></i> Stay tuned !</span>
+      <div style="margin-top: 28px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <span style="background: #f5f0fa; padding: 6px 28px; border-radius: 60px; font-weight: 600;">Class I – V</span>
+        <span style="background: #f5f0fa; padding: 6px 28px; border-radius: 60px; font-weight: 600;">All Subjects</span>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
-    <strong>St. Xavier's High School</strong>
-    <p>Class I – V | Weekly Academic Routine</p>
-
-    <div class="developer">
-        Developed by <strong>Ayush Kumar Routray</strong>
-    </div>
-
-    <p class="copyright">
-        © 2026 St. Xavier's High School. All Rights Reserved.
-    </p>
+  <strong><i class="fas fa-school"></i>St. Xavier's High School</strong>
+  <p>Classes I – V · Weekly Academic Routine</p>
+  <div class="developer">Developed by <strong>Ayush Kumar Routray</strong></div>
+  <p class="copyright">© 2026 St. Xavier's High School. All Rights Reserved.</p>
 </footer>
 
-
 <script>
+  /* ======== DATA ======== */
+  const classRoutine = {
+    1:{ Monday:["English CE","Hindi","Maths","EVS","Odia"], Tuesday:["Hindi","Maths","EVS","Odia","English CE"], Wednesday:["Maths","EVS","Odia","English CE","Hindi"], Thursday:["EVS","Odia","English CE","Hindi","Maths"], Friday:["Odia","English CE","Hindi","Maths","EVS"], Saturday:["Maths","Art","English GK","Hindi","Odia"] },
+    2:{ Monday:["Hindi","Maths","EVS","Odia","English CE"], Tuesday:["Maths","EVS","Odia","English CE","Hindi"], Wednesday:["EVS","Odia","English CE","Hindi","Maths"], Thursday:["Odia","English CE","Hindi","Maths","EVS"], Friday:["English CE","Hindi","Maths","EVS","Odia"], Saturday:["Odia","English GK","Art","Maths","Hindi"] },
+    3:{ Monday:["Maths","EVS","Odia","English CE","Hindi"], Tuesday:["EVS","Odia","English CE","Hindi","Maths"], Wednesday:["Odia","English CE","Hindi","Maths","EVS"], Thursday:["English CE","Hindi","Maths","EVS","Odia"], Friday:["Hindi","Maths","EVS","Odia","English CE"], Saturday:["Hindi","Odia","Maths","Art","English GK"] },
+    4:{ Monday:["EVS","Odia","English CE","Hindi","Maths"], Tuesday:["Odia","English CE","Hindi","Maths","EVS"], Wednesday:["English CE","Hindi","Maths","EVS","Odia"], Thursday:["Hindi","Maths","EVS","Odia","English CE"], Friday:["Maths","EVS","Odia","English CE","Hindi"], Saturday:["EVS","Maths","Hindi","English GK","Art"] },
+    5:{ Monday:["Odia","English CE","Hindi","Maths","EVS"], Tuesday:["English CE","Hindi","Maths","EVS","Odia"], Wednesday:["Hindi","Maths","EVS","Odia","English CE"], Thursday:["Maths","EVS","Odia","English CE","Hindi"], Friday:["EVS","Odia","English CE","Hindi","Maths"], Saturday:["English GK","Hindi","Odia","EVS","Maths"] }
+  };
+  const days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
-/* =====================================================
-   SCHOOL ROUTINE DATA
-===================================================== */
+  function roman(n) { return ["I","II","III","IV","V"][n-1]; }
 
-const classRoutine = {
-
-1: {
-    Monday: ["English CE", "Hindi", "Maths", "EVS", "Odia"],
-    Tuesday: ["Hindi", "English Grammar", "Odia", "Maths", "EVS"],
-    Wednesday: ["Maths", "Odia", "English CE", "Hindi", "EVS"],
-    Thursday: ["EVS", "English Grammar", "Hindi", "Odia", "Maths"],
-    Friday: ["English CE", "Maths", "EVS", "Hindi", "Odia"],
-    Saturday: ["Maths", "Art", "English GK", "Hindi", "Odia"]
-},
-
-2: {
-    Monday: ["Hindi", "English CE", "EVS", "Odia", "Maths"],
-    Tuesday: ["Maths", "Hindi", "English Grammar", "EVS", "Odia"],
-    Wednesday: ["Odia", "Maths", "Hindi", "English CE", "EVS"],
-    Thursday: ["English Grammar", "EVS", "Odia", "Maths", "Hindi"],
-    Friday: ["EVS", "English CE", "Maths", "Odia", "Hindi"],
-    Saturday: ["Odia", "Maths", "Art", "English GK", "Hindi"]
-},
-
-3: {
-    Monday: ["Maths", "EVS", "English CE", "Hindi", "Odia"],
-    Tuesday: ["EVS", "English Grammar", "Hindi", "Odia", "Maths"],
-    Wednesday: ["English CE", "Odia", "Maths", "EVS", "Hindi"],
-    Thursday: ["Hindi", "Maths", "English Grammar", "EVS", "Odia"],
-    Friday: ["Odia", "English CE", "EVS", "Maths", "Hindi"],
-    Saturday: ["Hindi", "Odia", "Maths", "Art", "English GK"]
-},
-
-4: {
-    Monday: ["EVS", "Maths", "Hindi", "English CE", "Odia"],
-    Tuesday: ["Odia", "EVS", "Maths", "Hindi", "English Grammar"],
-    Wednesday: ["Hindi", "English CE", "Odia", "Maths", "EVS"],
-    Thursday: ["Maths", "Odia", "EVS", "English Grammar", "Hindi"],
-    Friday: ["Hindi", "EVS", "English CE", "Odia", "Maths"],
-    Saturday: ["EVS", "English GK", "Hindi", "Art", "Maths"]
-},
-
-5: {
-    Monday: ["Odia", "EVS", "Maths", "Hindi", "English CE"],
-    Tuesday: ["EVS", "Odia", "Hindi", "English Grammar", "Maths"],
-    Wednesday: ["Hindi", "Maths", "EVS", "Odia", "English CE"],
-    Thursday: ["Odia", "Maths", "Hindi", "EVS", "English Grammar"],
-    Friday: ["Maths", "Hindi", "Odia", "EVS", "English CE"],
-    Saturday: ["English GK", "Hindi", "Odia", "Maths", "Art"]
-}
-
-};
-
-
-/* =====================================================
-   PERIOD INFORMATION
-===================================================== */
-
-const periods = [
-    "7:15 – 8:00",
-    "8:00 – 8:45",
-    "8:45 – 9:30",
-    "9:45 – 10:30",
-    "10:30 – 11:15"
-];
-
-const days = [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
-];
-
-
-/* =====================================================
-   SUBJECT STYLE
-===================================================== */
-
-function subjectClass(subject) {
-
-    if (subject.includes("English")) return "english";
-    if (subject === "Hindi") return "hindi";
-    if (subject === "Odia") return "odia";
-    if (subject === "Maths") return "maths";
-    if (subject === "EVS") return "evs";
-    if (subject === "Art") return "art";
-
+  function subjectClass(subj) {
+    if (subj.includes("English")) return "english";
+    if (subj === "Hindi") return "hindi";
+    if (subj === "Odia") return "odia";
+    if (subj === "Maths") return "maths";
+    if (subj === "EVS") return "evs";
+    if (subj === "Art") return "art";
     return "";
-}
+  }
 
-
-/* =====================================================
-   CLASS ROUTINE
-===================================================== */
-
-function renderClassRoutine() {
-
-    const classNo =
-        document.getElementById("classSelect").value;
-
-    const selectedDay =
-        document.getElementById("daySelect").value;
-
-    const search =
-        document.getElementById("searchClass").value
-        .toLowerCase();
-
-    const table =
-        document.getElementById("classTable");
-
-    let selectedDays =
-        selectedDay === "all" ? days : [selectedDay];
-
-    let html = `
-        <thead>
-            <tr>
-                <th>Day</th>
-                <th>1st Period<br>7:15–8:00</th>
-                <th>2nd Period<br>8:00–8:45</th>
-                <th>3rd Period<br>8:45–9:30</th>
-                <th>4th Period<br>9:45–10:30</th>
-                <th>5th Period<br>10:30–11:15</th>
-            </tr>
-        </thead>
-        <tbody>
-    `;
-
+  /* ======== RENDER CLASS ======== */
+  function renderClassRoutine() {
+    const classNo = document.getElementById("classSelect").value;
+    const selectedDay = document.getElementById("daySelect").value;
+    const search = document.getElementById("searchClass").value.toLowerCase();
+    const table = document.getElementById("classTable");
+    let selectedDays = selectedDay === "all" ? days : [selectedDay];
+    let html = `<thead><tr><th>Day</th><th>1st <br>7:15–8:00</th><th>2nd <br>8:00–8:45</th><th>3rd <br>8:45–9:30</th><th>4th <br>9:45–10:30</th><th>5th <br>10:30–11:15</th></tr></thead><tbody>`;
     selectedDays.forEach(day => {
-
-        const subjects = classRoutine[classNo][day];
-
-        if (
-            search &&
-            !subjects.join(" ").toLowerCase().includes(search)
-        ) {
-            return;
-        }
-
-        html += `<tr>`;
-
-        html += `
-            <td class="period">
-                ${day}
-            </td>
-        `;
-
-        subjects.forEach(subject => {
-
-            html += `
-                <td>
-                    <span class="subject ${subjectClass(subject)}">
-                        ${subject}
-                    </span>
-                </td>
-            `;
-
-        });
-
-        html += `</tr>`;
+      const subjects = classRoutine[classNo][day];
+      if (search && !subjects.join(" ").toLowerCase().includes(search)) return;
+      html += `<tr><td class="period">${day}</td>`;
+      subjects.forEach(sub => {
+        html += `<td><span class="subject ${subjectClass(sub)}">${sub}</span></td>`;
+      });
+      html += `</tr>`;
     });
-
     html += `</tbody>`;
-
     table.innerHTML = html;
-}
+  }
 
-
-/* =====================================================
-   TEACHER ROUTINE GENERATOR
-===================================================== */
-
-function getTeacherSchedule(teacher) {
-
+  /* ======== TEACHER ======== */
+  function getTeacherSchedule(teacher) {
     const result = {};
-
     days.forEach(day => {
-
-        result[day] = [];
-
-        for (let period = 0; period < 5; period++) {
-
-            let found = "Free";
-
-            for (let c = 1; c <= 5; c++) {
-
-                const subject =
-                    classRoutine[c][day][period];
-
-                let matches = false;
-
-                if (teacher === "English") {
-                    matches =
-                        subject.includes("English");
-                }
-
-                if (teacher === "Hindi") {
-                    matches = subject === "Hindi";
-                }
-
-                if (teacher === "Odia") {
-                    matches = subject === "Odia";
-                }
-
-                if (teacher === "Maths") {
-                    matches = subject === "Maths";
-                }
-
-                if (teacher === "EVS") {
-                    matches = subject === "EVS";
-                }
-
-                if (matches) {
-                    found = `Class ${roman(c)} – ${subject}`;
-                    break;
-                }
-            }
-
-            result[day].push(found);
+      result[day] = [];
+      for (let p = 0; p < 5; p++) {
+        let found = [];
+        for (let c = 1; c <= 5; c++) {
+          const sub = classRoutine[c][day][p];
+          const match = teacher === "English" ? sub.startsWith("English") : sub === teacher;
+          if (match) found.push(`Class ${roman(c)} – ${sub}`);
         }
+        result[day].push(found.length === 1 ? found[0] : found.length === 0 ? "Free" : "ERROR");
+      }
     });
-
     return result;
-}
+  }
 
-
-/* =====================================================
-   TEACHER ROUTINE
-===================================================== */
-
-function renderTeacherRoutine() {
-
-    const teacher =
-        document.getElementById("teacherSelect").value;
-
-    const selectedDay =
-        document.getElementById("teacherDay").value;
-
-    const table =
-        document.getElementById("teacherTable");
-
-    let selectedDays =
-        selectedDay === "all" ? days : [selectedDay];
-
-    const schedule =
-        getTeacherSchedule(teacher);
-
-    let html = `
-        <thead>
-            <tr>
-                <th>Day</th>
-                <th>1st Period<br>7:15–8:00</th>
-                <th>2nd Period<br>8:00–8:45</th>
-                <th>3rd Period<br>8:45–9:30</th>
-                <th>4th Period<br>9:45–10:30</th>
-                <th>5th Period<br>10:30–11:15</th>
-            </tr>
-        </thead>
-        <tbody>
-    `;
-
+  function renderTeacherRoutine() {
+    const teacher = document.getElementById("teacherSelect").value;
+    const selectedDay = document.getElementById("teacherDay").value;
+    const table = document.getElementById("teacherTable");
+    let selectedDays = selectedDay === "all" ? days : [selectedDay];
+    const schedule = getTeacherSchedule(teacher);
+    let html = `<thead><tr><th>Day</th><th>1st <br>7:15–8:00</th><th>2nd <br>8:00–8:45</th><th>3rd <br>8:45–9:30</th><th>4th <br>9:45–10:30</th><th>5th <br>10:30–11:15</th></tr></thead><tbody>`;
     selectedDays.forEach(day => {
-
-        html += `
-            <tr>
-                <td class="period">
-                    ${day}
-                </td>
-        `;
-
-        schedule[day].forEach(value => {
-
-            const isFree =
-                value === "Free";
-
-            html += `
-                <td>
-                    <span class="subject ${
-                        isFree ? "art" : subjectClass(
-                            value.split("–")[1] || ""
-                        )
-                    }">
-                        ${value}
-                    </span>
-                </td>
-            `;
-
-        });
-
-        html += `</tr>`;
+      html += `<tr><td class="period">${day}</td>`;
+      schedule[day].forEach(val => {
+        const cls = val === "Free" ? "free" : subjectClass(val.split("–")[1] || "");
+        html += `<td><span class="subject ${cls}">${val}</span></td>`;
+      });
+      html += `</tr>`;
     });
-
     html += `</tbody>`;
-
     table.innerHTML = html;
-}
+  }
 
+  /* ======== NAV ======== */
+  function showSection(section, button) {
+    ['classes','teachers','syllabus'].forEach(id => document.getElementById(id).classList.add('hidden'));
+    document.getElementById(section).classList.remove('hidden');
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    button.classList.add('active');
+    let titles = { classes:'Class-wise Routine', teachers:'Teacher-wise Routine', syllabus:'Syllabus & Curriculum' };
+    document.getElementById('pageTitle').innerHTML = `<i class="fas fa-${section==='classes'?'table':section==='teachers'?'chalkboard-teacher':'book-open'}"></i> ${titles[section]}`;
+    if (section === 'classes') renderClassRoutine();
+    else if (section === 'teachers') renderTeacherRoutine();
+  }
 
-/* =====================================================
-   NAVIGATION
-===================================================== */
-
-function showSection(section, button) {
-
-    document.getElementById("classes")
-        .classList.add("hidden");
-
-    document.getElementById("teachers")
-        .classList.add("hidden");
-
-    document.getElementById(section)
-        .classList.remove("hidden");
-
-    document.querySelectorAll(".nav-btn")
-        .forEach(btn => btn.classList.remove("active"));
-
-    button.classList.add("active");
-
-    document.getElementById("pageTitle").textContent =
-        section === "classes"
-        ? "Class-wise Routine"
-        : "Teacher-wise Routine";
-
-    if (section === "classes") {
-        renderClassRoutine();
-    } else {
-        renderTeacherRoutine();
-    }
-}
-
-
-/* =====================================================
-   ROMAN NUMBERS
-===================================================== */
-
-function roman(number) {
-
-    const values = [
-        "I",
-        "II",
-        "III",
-        "IV",
-        "V"
-    ];
-
-    return values[number - 1];
-}
-
-
-/* =====================================================
-   INITIAL LOAD
-===================================================== */
-
-renderClassRoutine();
-
+  /* ======== VALIDATE ======== */
+  function validateRoutine() {
+    const teacherOf = s => s.startsWith("English") ? "English" : s;
+    let errors = [];
+    days.forEach(day => {
+      for (let p = 0; p < 5; p++) {
+        let used = {};
+        for (let c = 1; c <= 5; c++) {
+          const sub = classRoutine[c][day][p];
+          const t = teacherOf(sub);
+          if (used[t]) errors.push(`${day}, P${p+1}: ${t} assigned to ${roman(c)} & ${roman(used[t])}`);
+          else used[t] = c;
+        }
+      }
+    });
+    if (errors.length) console.error("ROUTINE ERROR:", errors);
+    else console.log("✓ Routine validated: no teacher clashes.");
+  }
+  validateRoutine();
+  renderClassRoutine();
 </script>
-
 </body>
 </html>
